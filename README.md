@@ -17,4 +17,4 @@ A restaurant web application designed to provide an interactive online ordering 
 - Express.js
 
 ## Author
-Arpan Kaur
+Arpandeep Kaur and Tina
