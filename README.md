@@ -3,15 +3,14 @@
 An Uber Eats inspired food delivery and restaurant management web application that allows users to browse restaurants, explore menus, and place food orders through a responsive interface.
 
 ## Features
-- Restaurant and menu browsing
-- Food ordering workflow
-- Responsive frontend UI
-- Backend routing with Express.js
-- MongoDB database integration
-- MVC architecture
+• Customer food ordering
+• Dynamic restaurant menu
+• Driver registration system
+• Delivery assignment workflow
+• MongoDB database integration
+• Responsive frontend design
 
 ## Technologies Used
-- HTML
 - CSS
 - JavaScript
 - Node.js
