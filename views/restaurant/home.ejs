@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Hungry Bytes Bistro</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <img src="/images/logo.png" alt="Hungry Byte Bistro Logo" class="logo">
+    <h1>Welcome to The Hungry Bytes Bistro</h1>
+  </header>  
+  <main>
+    <!-- Menu Section -->
+    <section class="menu">
+      <h2>Our Menu</h2>
+      <div class="menu-items">
+        <% if (menuItems && menuItems.length > 0) { %>
+          <% menuItems.forEach(item => { %>
+            <div class="menu-item">
+              <h3><%= item.name %></h3>
+              <p><%= item.description %></p>
+              <p>Price: $<%= item.price %></p>
+              <% if (item.image) { %>
+                <img src="<%= item.image %>" alt="<%= item.name %>" class="menu-image" />
+              <% } %>
+            </div>
+          <% }) %>
+        <% } else { %>
+          <p>No menu items available.</p>
+        <% } %>
+      </div>
+    </section>
+
+    <!-- Order Form Section -->
+    <section class="order-form">
+      <h3>Place an Order</h3>
+      <form id="orderForm" action="/order" method="POST">
+        <label for="customerName">Customer Name:</label>
+        <input type="text" name="customerName" id="customerName">
+
+        <label for="deliveryAddress">Delivery Address:</label>
+        <input type="text" name="deliveryAddress" id="deliveryAddress">
+
+        <label for="items">Select Items:</label>
+        <select name="items" id="items" multiple>
+          <% menuItems.forEach(item => { %>
+            <option value="<%= item.name %>"><%= item.name %> ($<%= item.price %>)</option>
+          <% }) %>
+        </select>
+
+        <button type="submit">Place Order</button>
+      </form>
+    </section>
+
+    <!-- Order Status Form Section -->
+    <section class="order-status">
+      <h3>Check Your Order Status</h3>
+      <form id="orderStatusForm" action="/order-status" method="POST">
+        <label for="orderId">Enter Order ID:</label>
+        <input type="text" name="orderId" id="orderId">
+        <button type="submit">Check Status</button>
+      </form>
+    </section>
+
+    <!-- Driver Section -->
+    <section class="driver">
+      <h3>Driver Section</h3>
+      <div class="driver-buttons">
+        <a href="/drivers/register"><button>Register as Driver</button></a>
+        <a href="/drivers/login"><button>Driver Login</button></a>
+        <a href="/drivers/deliveries"><button>View Deliveries</button></a>
+      </div>
+    </section>
+
+    <!-- Include Validation Script -->
+    <script src="/js/validation.js"></script>
+    
+    <!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <h1>The Hungry Bytes Bistro <span>Group 7</span></h1>
+    </div>
+    <div class="social-links">
+      <a href="https://twitter.com/" target="_blank" class="twitter">Twitter</a>
+      <a href="https://www.facebook.com/" target="_blank" class="facebook">Facebook</a>
+      <a href="https://www.instagram.com/" target="_blank" class="instagram">Instagram</a>
+    </div>
+  </div>
+
+  <div class="contact-info">
+    <div>
+      <h5>Get In Touch</h5>
+      <p>205 Humber College Blvd</p>
+      <p>Etobicoke ON M9W 5L7</p>
+    </div>
+    <div>
+      <h5>Opening Hours</h5>
+      <p>Mon – Fri: 9AM – 5PM</p>
+      <p>+(416) 675-3111</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; <a href="#">Group 7 - HTML Course</a>. All Rights Reserved. Designed by <a href="https://htmlcodex.com" target="_blank">HTML Codex</a></p>
+  </div>
+</footer>
+
+  <!-- Footer End -->
+  </main>
+</body>
+</html>

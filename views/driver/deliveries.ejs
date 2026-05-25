@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Hungry Bytes Bistro</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <img src="/images/logo.png" alt="Hungry Byte Bistro Logo" class="logo">
+    <h1>Welcome to The Hungry Bytes Bistro</h1>
+  </header>  
+<body>
+  <h1>Available Deliveries</h1>
+  <div class="navigation-buttons">
+    <a href="/"><button>Restaurant Home</button></a>
+    <a href="/orders"><button>Manage Orders</button></a>
+    <a href="/drivers/register"><button>Register as Driver</button></a>
+    <a href="/drivers/login"><button>Driver Login</button></a>
+  </div>
+
+  <% if (deliveries.length > 0) { %>
+    <ul>
+      <% deliveries.forEach(delivery => { %>
+        <li>
+          Order ID: <%= delivery._id %><br>
+          Customer: <%= delivery.customerName %><br>
+          Address: <%= delivery.deliveryAddress %><br>
+          Items: <%= delivery.items.join(", ") %>
+          <form action="/drivers/deliveries/<%= delivery._id %>/accept" method="POST">
+            <button type="submit">Accept Delivery</button>
+          </form>
+        </li>
+      <% }) %>
+    </ul>
+  <% } else { %>
+    <p>No deliveries available.</p>
+  <% } %>
+  <br> <br> <br> <br> <br>
+
+  <!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <h1>The Hungry Bytes Bistro <span>Group 7</span></h1>
+    </div>
+    <div class="social-links">
+      <a href="https://twitter.com/" target="_blank" class="twitter">Twitter</a>
+      <a href="https://www.facebook.com/" target="_blank" class="facebook">Facebook</a>
+      <a href="https://www.instagram.com/" target="_blank" class="instagram">Instagram</a>
+    </div>
+  </div>
+
+  <div class="contact-info">
+    <div>
+      <h5>Get In Touch</h5>
+      <p>205 Humber College Blvd</p>
+      <p>Etobicoke ON M9W 5L7</p>
+    </div>
+    <div>
+      <h5>Opening Hours</h5>
+      <p>Mon – Fri: 9AM – 5PM</p>
+      <p>+(416) 675-3111</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; <a href="#">Group 7 - HTML Course</a>. All Rights Reserved. Designed by <a href="https://htmlcodex.com" target="_blank">HTML Codex</a></p>
+  </div>
+</footer>
+
+  <!-- Footer End -->
+</body>
+</html>
