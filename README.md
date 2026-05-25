@@ -1,13 +1,14 @@
 # The Hungry Bytes Bistro
 
-A restaurant web application designed to provide an interactive online ordering experience with responsive frontend design and backend functionality.
+A food delivery and restaurant management web application inspired by Uber Eats, allowing users to browse menus, place orders, and explore restaurant services through a responsive interface.
 
 ## Features
-- Dynamic restaurant menu
-- Responsive UI
-- Order management
-- Backend routing with Node.js and Express
-- Modular MVC structure
+- Restaurant browsing
+- Food ordering system
+- Dynamic menus
+- Backend routing with Node.js & Express
+- Responsive UI/UX
+- MVC project structure
 
 ## Technologies Used
 - HTML
