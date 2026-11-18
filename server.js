@@ -10,8 +10,8 @@ const restaurantRoutes = require("./routes/restaurant");
 
 // Constants
 const PORT = 8000;
-//const CONNECTION_STRING = `mongodb+srv://dbUser:loonakimlip@cluster0.3eb3d.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
-const CONNECTION_STRING = `mongodb+srv://dbUser:Arpanvirk04@cluster0.s5vvc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+
+const CONNECTION_STRING = //insert mongodb
 
 // Middleware
 app.use(express.json());
