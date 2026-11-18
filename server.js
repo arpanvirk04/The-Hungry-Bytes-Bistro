@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
@@ -8,10 +9,11 @@ const app = express();
 const restaurantRoutes = require("./routes/restaurant");
 
 
+
 // Constants
 const PORT = 8000;
 
-const CONNECTION_STRING = //insert mongodb
+const CONNECTION_STRING = process.env.MONGODB_URI;
 
 // Middleware
 app.use(express.json());
